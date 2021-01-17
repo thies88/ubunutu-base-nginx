@@ -8,9 +8,9 @@ LABEL build_version="version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="Thies88"
 
 RUN \
- echo "### enable src repos ##" && \
- sed -i "/^#.*deb.*main restricted$/s/^# //g" /etc/apt/sources.list && \
- sed -i "/^#.*deb.*universe$/s/^# //g" /etc/apt/sources.list && \
+ #echo "### enable src repos ##" && \
+ #sed -i "/^#.*deb.*main restricted$/s/^# //g" /etc/apt/sources.list && \
+ #sed -i "/^#.*deb.*universe$/s/^# //g" /etc/apt/sources.list && \
 
 echo "Adding nginx repo to fetch latest version of nginx for ${REL}" && \
 echo "deb [arch=${ARCH}] http://nginx.org/packages/mainline/ubuntu/ ${REL} nginx" > /etc/apt/sources.list.d/nginx.list && \
